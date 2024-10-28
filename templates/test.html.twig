@@ -1,0 +1,15 @@
+   {{ {% extends 'base.html.twig' %}}}
+
+   {# {{ block body }} #}
+    {# partie css #}
+    {{ encore_entry_link_tags('app') }}
+    {# partie js #}
+    {{ encore_entry_script_tags('app1') }}
+
+
+
+{# The React component will stay mounted if the div is moved in the DOM #}
+<div {{ react_component('Hello', {fullName: 'Fabien'}, {permanent: true}) }}>
+     Loading...  
+</div>
+    {# {{ endblock }} #}

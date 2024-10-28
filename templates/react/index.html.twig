@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReactController!{% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+{{ encore_entry_link_tags('app1') }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+{# <div id="root"></div> #}
+
+{# Inclut les fichiers JS de app et app1 #}
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('app1') }}
+
+
+<div class="example-wrapper text-white">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+{# Élément pour le composant App #}
+<div id="app-root"></div>
+<div class="bg-white">
+		<div class="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<p class="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">Salut !</p>
+				<p class="mx-auto mt-5 max-w-xl text-xl text-gray-500">Ceci est une démo de React dans une application Symfony</p>
+                <!-- Point d'ancrage pour React -->
+                {# <div {{ first_component('FirstComponent', { 'fullName': 'YoanDev' }) }}></div> #}
+            </div>
+		</div>
+	</div>
+    <div id="first-component-root"></div> 
+    {# <div id="root"></div> #}
+
+{% endblock %}

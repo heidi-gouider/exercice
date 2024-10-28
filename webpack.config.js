@@ -7,6 +7,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
+// définir le répertoire public comme répertoire de sortie
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
@@ -20,7 +21,12 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
+// ajouter des fichiers d'entrée pour le JavaScript
     .addEntry('app', './assets/app.js')
+    .addEntry('app1', './react/app1/index.js')
+
+// ajouter un fichier CSS
+    .addStyleEntry('app_styles', './assets/styles/app.css')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -52,6 +58,8 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = '3.38';
     })
+
+    .enablePostCssLoader() // Active PostCSS
 
     // enables Sass/SCSS support
     //.enableSassLoader()

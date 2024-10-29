@@ -10,8 +10,8 @@ const App = () => {
   // export default function App() {
 
   let userName = "lili";
-  const [nom, setNom] = useState("Votre nom");
-  const [prenom, setPrenom] = useState("Votre prenom");
+  const [nom, setNom] = useState("");
+  const [prenom, setPrenom] = useState("");
 
   const handleChangeNom = (evt) => {
     setNom(evt.target.value);
@@ -22,12 +22,12 @@ const App = () => {
 
   return (
     <div>
-      <div className="text-white">
+      <div className="text-white" mb-5="true">
         <h1>Salut {userName} !</h1>
-        <p> pour changer le Nom :</p>
+        <p> Pour changer ton Nom :</p>
       </div>
       <div>
-        <div className="text-white">Bonjour {nom} {prenom}</div>
+        <div className="text-white">Bonjour {prenom} {nom}</div>
         <input type="text" value={nom} onChange={handleChangeNom} style={{ backgroundColor: "grey", color: "white" }} />
         <input type="text" value={prenom} onChange={handleChangePrenom} style={{ color: "black"}} />
       </div>

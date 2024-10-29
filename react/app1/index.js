@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom/client'
 import App from './app.jsx'
 // import FirstComponent from '../firstComponent.jsx'
 import FirstComponent from '../components/firstComponent.jsx';
+import CountComponent from '../components/countComponent.jsx';
+import ListComponent from '../components/listComponent.jsx';
+
 // import App from './app';
 // import App from './react/app1/app.jsx';
 
@@ -22,6 +25,20 @@ ReactDOM.createRoot(document.getElementById('app-root')).render(
       <FirstComponent />
     </React.StrictMode>
   );
+
+
+  ReactDOM.createRoot(document.getElementById('count-component-root')).render(
+    <React.StrictMode>
+      <CountComponent />
+    </React.StrictMode>
+  );
+
+  ReactDOM.createRoot(document.getElementById('list-component-root')).render(
+    <React.StrictMode>
+      <ListComponent />
+    </React.StrictMode>
+  );
+
   // const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // root.render(

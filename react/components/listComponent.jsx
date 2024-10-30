@@ -44,7 +44,7 @@ const handleAddList = (event) => {
 
             <>
             <div className="text-white mb-4">
-                <h1>Input d'ajpout d'éléments dans une liste (listComponent)<i class="bi bi-arrow-down-left"></i></h1>
+                <h1>Input d'ajpout d'éléments dans une liste (listComponent)<i className="bi bi-arrow-down-left"></i></h1>
             </div>
 
             {/* <div className="text-white">Listes des courses</div> */}
@@ -66,7 +66,8 @@ const handleAddList = (event) => {
             </ul>
 
             {/* Dropdown pour afficher les éléments de la liste */}
-            <select className="form-select mt-3 text-black">
+            <select className="form-select mt-3 text-black mb-5">
+            <option value="">Choisir</option>
                 {list.map((list, index) => (
                     <option key={index} value={list}>
                         {list}

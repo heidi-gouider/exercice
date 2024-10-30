@@ -8,6 +8,8 @@ import App from './app.jsx'
 import FirstComponent from '../components/firstComponent.jsx';
 import CountComponent from '../components/countComponent.jsx';
 import ListComponent from '../components/listComponent.jsx';
+// import SearchBar from '../components/searchBarComponent.jsx';
+import QuizComponent from '../components/quizComponent.jsx';
 
 // import App from './app';
 // import App from './react/app1/app.jsx';
@@ -38,6 +40,19 @@ ReactDOM.createRoot(document.getElementById('app-root')).render(
       <ListComponent />
     </React.StrictMode>
   );
+
+  // ReactDOM.createRoot(document.getElementById('search-component-root')).render(
+  //   <React.StrictMode>
+  //     <SearchBar />
+  //   </React.StrictMode>
+  // );
+
+  ReactDOM.createRoot(document.getElementById('quiz-component-root')).render(
+    <React.StrictMode>
+      <QuizComponent />
+    </React.StrictMode>
+  );
+
 
   // const root = ReactDOM.createRoot(document.getElementById('root'));
 

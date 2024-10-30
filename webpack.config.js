@@ -24,6 +24,7 @@ Encore
 // ajouter des fichiers d'entrée pour le JavaScript
     .addEntry('app', './assets/app.js')
     .addEntry('app1', './react/app1/index.js')
+    .addEntry('app2', './react/app2/index.js')
 
 // ajouter un fichier CSS
     .addStyleEntry('app_styles', './assets/styles/app.css')

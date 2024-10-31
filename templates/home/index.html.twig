@@ -17,16 +17,23 @@
 		}
 	</style>
 	{# Inclut les fichiers JS de app et app1 #}
-{{ encore_entry_script_tags('app') }}
-{{ encore_entry_script_tags('app1') }}
+	{# {{ encore_entry_script_tags('app') }} #}
+	{{ encore_entry_script_tags('app1') }}
 
 
 	<div class="example-wrapper text-white">
-		<h1>Bienvenue !</h1>
-<div id="app-root"></div>
+		<div class="nav-item text-right mb-5">
+			<a class="nav-link text-center text-white ml-5 underline" href="{{ path('app_quiz') }}">Aller au Quiz</a>
+			<a class="nav-link text-center text-white ml-5 underline" href="{{ path('app_search_bar') }}">Rechercher une catégorie</a>
+		</div>
+
+		<h1 class="mb-5">Bienvenue !</h1>
+					<hr style="border: none; border-top: 2px solid #000; margin: 20px 0;">
+
+		<div id="app-root"></div>
 
 		<div class="contenu">
-			<h1 class="fst-italic mb-5">Notre catalogue</h1>
+			<h1 class="fst-italic mb-5">Notre catalogue :</h1>
 			{# <div class="container text-center"> #}
 
 			<main class="container">
@@ -50,19 +57,24 @@
 					</div>
 				</div>
 			</main>
-			<div class="bg-white">
-
-				{# <div id="root"></div> #}
+			<hr style="border: none; border-top: 2px solid #000; margin: 20px 0;">
+			{# <div class="bg-white">{# <div id="root"></div> #}
 				{# <div id="search-component-root"></div>  #}
-			</div>
+			{#</div>
 			<div class="nav-item">
 				<a class="nav-link text-center text-white" href="{{ path('app_react') }}">Retour à l'accueil</a>
-			</div>
+			</div> #}
 
 		</div>
-				<div id="first-component-root"></div>
-				<div id="quiz-component-root"></div>
-				{# <div id="list-component-root"></div> #}
+		<div id="first-component-root"></div>
+							<hr style="border: none; border-top: 2px solid #000; margin: 20px 0;">
+
+		<div id="quiz-component-root"></div>
+		<div id="count-component-root"></div>
+							<hr style="border: none; border-top: 2px solid #000; margin: 20px 0;">
+
+		{# <div id="app2-root"></div> #}
+		<div id="list-component-root"></div>
 
 	</div>
 {% endblock %}

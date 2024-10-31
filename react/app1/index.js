@@ -3,16 +3,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // Notre composant principal et le style
-import App from './app.jsx'
-// import FirstComponent from '../firstComponent.jsx'
+// import App from './app.jsx'
 import FirstComponent from '../components/firstComponent.jsx';
 import CountComponent from '../components/countComponent.jsx';
 import ListComponent from '../components/listComponent.jsx';
-// import SearchBar from '../components/searchBarComponent.jsx';
-import QuizComponent from '../components/quizComponent.jsx';
+import App from '../app1/app.jsx';
 
 // import App from './app';
-// import App from './react/app1/app.jsx';
 
 // import './index.css'
 
@@ -22,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('app-root')).render(
       <App />
     </React.StrictMode>
   );
+
   ReactDOM.createRoot(document.getElementById('first-component-root')).render(
     <React.StrictMode>
       <FirstComponent />
@@ -47,11 +45,11 @@ ReactDOM.createRoot(document.getElementById('app-root')).render(
   //   </React.StrictMode>
   // );
 
-  ReactDOM.createRoot(document.getElementById('quiz-component-root')).render(
-    <React.StrictMode>
-      <QuizComponent />
-    </React.StrictMode>
-  );
+  // ReactDOM.createRoot(document.getElementById('quiz-component-root')).render(
+  //   <React.StrictMode>
+  //     <QuizComponent />
+  //   </React.StrictMode>
+  // );
 
 
   // const root = ReactDOM.createRoot(document.getElementById('root'));

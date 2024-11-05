@@ -44,7 +44,7 @@ const handleAddList = (event) => {
 
             <>
             <div className="text-white mb-4">
-                <h1>Input d'ajpout d'éléments dans une liste (listComponent)<i className="bi bi-arrow-down-left"></i></h1>
+                <h1>Input d'ajout d'éléments dans une liste (listComponent)<i className="bi bi-arrow-down-left"></i></h1>
             </div>
 
             {/* <div className="text-white">Listes des courses</div> */}

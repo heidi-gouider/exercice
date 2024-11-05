@@ -18,6 +18,11 @@ const SearchBar = ({ categories = [] }) => {
         const searchQuery = e.target.value.toLowerCase();
         setQuery(searchQuery);
 
+        // if (searchQuery.trim() === '') {
+        //     // Si la recherche est vide, on vide les résultats ou on affiche un message spécifique
+        //     setFilteredCategories([]);
+        //     return;
+        // }
     //     // Filtrage des categories en fonction de la recherche
         const results = categories.filter(categorie => 
         // {
@@ -46,15 +51,19 @@ const SearchBar = ({ categories = [] }) => {
             />
 
             <ul className="list-group mt-3 text-white">
-                {filteredCategories.map((categorie) => (
+                {/* Si `query` est présent mais qu'il n'y a pas de résultats, afficher un message  */}
+            {query && filteredCategories.length === 0 ? (
+                    <li className="list-group-item">Aucune catégorie trouvée</li>
+                ) : null}
+
+{/* Si `query` est non vide, afficher les résultats filtrés */}
+{query && filteredCategories.map((categorie) => (
+                // {filteredCategories.map((categorie) => (
                     <li key={categorie.id} className="list-group-item">
                         {categorie.libelle_categorie}
                     </li>
                 ))
-            //   (
-            //     <li className="list-group-item">Aucune catégorie trouvée</li>
-            //     )
-                }
+    }
             </ul>
         </div>
     );

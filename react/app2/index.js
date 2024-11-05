@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App2 from './app.jsx';
-// import SearchBar from '../components/searchBarComponent.jsx';
+import SearchBar from '../components/searchBarComponent.jsx';
 
 // app2 et searchBar sont montés conditionnellement sur leurs éléments DOM respectifs afin de ne pas causer de conflits ou erreurs si l'élément n'existe pas.
 

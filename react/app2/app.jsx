@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '../components/searchBarComponent';
 import TableauComponent from '../components/tableauComponent';
+// import GraphComponent from '../components/graphComponent';
 
 const App2 = () => {
     const [categories, setCategories] = useState([]);
-    // const [data, setData] = useState([
-    //     { nom: "Booth", prenom: "Cliff", ville: "Hollywood" },
-    //     { nom: "Lebowski", prenom: "Jeff", ville: "Los Angeles" },
-    //     { nom: "Vega", prenom: "Vincent", ville: "Los Angeles" },
-    //     { nom: "Kiddo", prenom: "Beatrix", ville: "El Paso" },
-    //   ]);
+    const [produits, setProduits] = useState([]);
     
+        
 
     useEffect(() => {
         // Simulation de récupération des categories depuis une API pour la recherche et/ou le tableau
@@ -18,27 +15,73 @@ const App2 = () => {
             .then(response => response.json())
             // .then(data => setCategories(data));
             .then(data => {
-                console.log("Catégories récupérées :", data.member); 
+                // console.log("Catégories récupérées :", data.member); 
 
-                // const filteredData = data.member.map(cat => ({
+                const formattedData = data.member.map(cat => ({
                 //     // garder l'id si nécessaire pour les clés
-                //     nom: cat.libelle_categorie,
-                //     description: cat.description_categorie,
-                // })
-            // );
+                    nom: cat.libelle_categorie,
+                    description: cat.description_categorie,
+                })
+            );
 
-                // setCategories(filteredData);
+                setCategories(formattedData);
+                // setFilteredCategories(formattedData); // Initialisation avec toutes les catégories
                 setCategories(Array.isArray(data.member) ? data.member : []);
             })
             .catch(error => console.error("Erreur de récupération des données :", error));
 
     }, []);
 
+    useEffect(() => {
+        // Simulation de récupération des categories depuis une API pour la recherche et/ou le tableau
+        fetch('/api/produits')
+            .then(response => response.json())
+            // .then(data => setProduits(data))
+            .then(data => {
+                // console.log("produits récupérées :", data.member); 
+
+                const formattedData = data.member.map(prod => ({
+                //     // garder l'id si nécessaire pour les clés
+                    nom: prod.libelle_produit,
+                    description: prod.description_produit,
+                    quantite: prod.quantite_stock,
+                })
+            );
+
+                // setProduits(formattedData);
+                // setFilteredCategories(formattedData); // Initialisation avec toutes les catégories
+                setProduits(Array.isArray(data.member) ? data.member : []);
+            })
+            .catch(error => console.error("Erreur de récupération des données :", error));
+
+    }, []);
+
+
+    // const fetchProduits = async () => {
+    //     // Effectuer le fetch pour récupérer tous les produits
+    //     const apiUrl = `/api/produits`; // L'URL pour récupérer tous les produits
+
+    //     try {
+    //         const response = await fetch(apiUrl);
+    //         if (!response.ok) {
+    //             throw new Error('Erreur lors de la récupération des produits');
+    //         }
+    //         const data = await response.json();
+    //         setProduits(data); // Mettre à jour l'état avec les produits récupérés
+    //     } catch (error) {
+    //         console.error("Erreur de récupération des produits :", error);
+    //         setProduits([]); // Réinitialiser les produits en cas d'erreur
+    //     }
+    // };
+
     return (
         <div className="container">
-            {/* <h1>Catalogue</h1> */}
-            <SearchBar categories={categories} />
+            <SearchBar categories={categories} 
+            // onSearch={fetchProduits}
+            />
             {/* <TableauComponent data={categories} /> */}
+            <TableauComponent data={produits} />
+            {/* <GraphComponent/> */}
         </div>
     );
 };

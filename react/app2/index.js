@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App2 from './app.jsx';
 import SearchBar from '../components/searchBarComponent.jsx';
+import GraphComponent from '../components/graphComponent.jsx';
 
 // app2 et searchBar sont montés conditionnellement sur leurs éléments DOM respectifs afin de ne pas causer de conflits ou erreurs si l'élément n'existe pas.
 
@@ -23,7 +24,7 @@ import SearchBar from '../components/searchBarComponent.jsx';
 //     </React.StrictMode>
 //   );
 // }
-const categories = []; // Vous devrez charger vos catégories depuis l'API
+const categories = []; // charger les catégories depuis l'API
 
 // Créez votre application principale ici
 ReactDOM.createRoot(document.getElementById('app2-root')).render(
@@ -39,3 +40,9 @@ ReactDOM.createRoot(document.getElementById('app2-root')).render(
 //         <SearchBar categories={categories} />
 //     </React.StrictMode>
 // );
+// Rendre le graph
+ReactDOM.createRoot(document.getElementById('graph-component-root')).render(
+    <React.StrictMode>
+        <GraphComponent/>
+    </React.StrictMode>
+);

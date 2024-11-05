@@ -1,6 +1,5 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
-// import TableauComponent from './TableauComponent';
 // import React, { useEffect, useState } from 'react';
 
 
@@ -9,34 +8,22 @@ const TableauComponent = ({ data }) => {
 const columns = [
     {
       name: <b>Nom</b>,
-      selector: (row) => row.nom,
+      selector: (row) => row.libelle_produit,
       sortable: true,
     },
     {
       name: <b>description</b>,
-      selector: (row) => row.description,
+      selector: (row) => row.description_produit || 'Aucune description', //  valeur par défaut,
       sortable: true,
     },
-    // {
-    //   name: <b>Ville</b>,
-    //   selector: (row) => row.ville,
-    //   sortable: true,
-    // }
+    {
+      name: <b>Quantité</b>,
+      selector: (row) => row.quantite_stock,
+      sortable: true,
+    }
   ];
-
-  // const [data, setData] = useState([
-  //   { nom: "Booth", prenom: "Cliff", ville: "Hollywood" },
-  //   { nom: "Lebowski", prenom: "Jeff", ville: "Los Angeles" },
-  //   { nom: "Vega", prenom: "Vincent", ville: "Los Angeles" },
-  //   { nom: "Kiddo", prenom: "Beatrix", ville: "El Paso" },
-  // ])};
-
-  // useEffect(() => {
-    // Exemple de récupération des données depuis une API Symfony
-//     fetch('/api/users')
-//     .then(response => response.json())
-//     .then(data => setData(data));
-// }, []);
+    // Vérifiez ce que contient data juste avant de rendre le tableau
+    // console.log("Données pour le tableau :", data);
 
 return (
   <DataTable

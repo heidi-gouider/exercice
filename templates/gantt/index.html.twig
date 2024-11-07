@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeComtroller!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	{# Inclut les fichiers JS de app et app1 #}
+	{# {{ encore_entry_script_tags('app') }} #}
+	{{ encore_entry_script_tags('app3') }}
+
+
+	<div class="example-wrapper text-white">
+		<div class="nav-item text-right mb-5">
+			<a class="nav-link text-center text-white ml-5 underline" href="{{ path('app_quiz') }}">Aller au Quiz</a>
+			<a class="nav-link text-center text-white ml-5 underline" href="{{ path('app_search_bar') }}">Rechercher une catégorie</a>
+		</div>
+
+		<div id="app-root"></div>
+
+		<div class="contenu">
+			<h1 class="fst-italic mb-5">Diagramme de Gantt :</h1>
+			{# <div class="container text-center"> #}
+			<div id="app3-root"></div>
+			{# 'diagramme-component-root' #}
+		</div>
+	</div>
+{% endblock %}

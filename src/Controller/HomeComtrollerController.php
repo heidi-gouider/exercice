@@ -68,5 +68,18 @@ class HomeComtrollerController extends AbstractController
                 // 'parent_categorie' => $parentCategorie,
             ]);
         }
+
+        #[Route('/gantt', name: 'app_gantt')]
+        public function gantt(): Response
+        {
+            //  $categories = $this->categorieRepository->findAll();
+            // $categories =$this->categorieRepository->findBy(['parent_categorie' => null]);
+    
+            return $this->render('gantt/index.html.twig', [
+                // 'categories' => $categories,
+                // 'controller_name' => 'HomeComtrollerController',
+            ]);
+        }
+    
     
 }

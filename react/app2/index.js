@@ -29,7 +29,8 @@ const categories = []; // charger les catégories depuis l'API
 // Créez votre application principale ici
 ReactDOM.createRoot(document.getElementById('app2-root')).render(
     <React.StrictMode>
-        <App2 categories={categories} /> {/* Passez les catégories ici si nécessaire */}
+        {/* Passez les catégories ici si nécessaire  */}
+        <App2 categories={categories} /> 
     </React.StrictMode>
 
 );

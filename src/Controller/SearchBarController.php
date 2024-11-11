@@ -11,7 +11,7 @@ class SearchBarController extends AbstractController
     #[Route('/search/bar', name: 'app_search_bar')]
     public function index(): Response
     {
-        return $this->render('search_bar/index.html.twig', [
+        return $this->render('app2/index.html.twig', [
             'controller_name' => 'SearchBarController',
         ]);
     }
